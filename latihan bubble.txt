@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int tukar(int *tampung, int data[], int j)
+{
+    *tampung=data[j];
+    data[j]=data[j+1];
+    data[j+1]=*tampung;
+}
+
+int main(int argc, char **argvq)
+{
+    int banyak_data, i, j, b, tampung, tamp;
+    
+    cout<<"masukkan jumlah data : ";
+    cin>>banyak_data;
+    int data[banyak_data];
+    
+    for(i=0; i<banyak_data; i++)
+    {
+        cout<<" masukkan data ke "<<i<<":";
+        cin>>data[i];
+    }
+    cout<<"data yang sebelum terurut : ";
+    
+ for(tamp:data)
+    {
+        cout<< tamp <<" ";
+    }
+    
+    for (i=1; i<banyak_data; i++)
+    {
+        for(j=0; j<banyak_data; j++)
+        {
+            if(data[j]>data[j+1])
+            {
+                tukar(&b, data, j);
+            }
+        }
+    }
+    
+    cout<<"\ndata yang sudah terurut : ";
+    for(tamp:data)
+    {
+        cout<< tamp <<" ";
+    }
+    return 0;
+}
