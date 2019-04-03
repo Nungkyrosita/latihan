@@ -1,0 +1,2 @@
+# latihan
+lthan pemrogrmn c++
